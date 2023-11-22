@@ -3344,30 +3344,18 @@ select sum(otp_entered) searches from trips_details4;
 
 select sum(end_ride) searches from trips_details4;
 
-
---cancelled bookings by driver
-
-
-
---cancelled bookings by customer
-
-
 --average distance per trip
 
 select avg(distance) from trips;
 
 --average fare per trip
+
 select avg(fare) from trips;
 
 select sum(fare)/count(*) from trips;
 
---distance travelled
-
-
-
-
-
 -- which is the most used payment method 
+
 select a.method from payment a inner join
 
 (select top 1 faremethod, count(distinct tripid) cnt from trips
@@ -3430,21 +3418,6 @@ where rnk=1;
 select * from trips_details4;
 
 select sum(searches_got_estimate)*100.0/sum(searches) from trips_details4;
-
--- estimate to search for quote rates
-
-
--- quote acceptance rate
-
-
--- quote to booking rate
-
-
--- booking cancellation rate
-
-
--- conversion rate
-
 
 -- which area got highest trips in which duration
 
